@@ -3,7 +3,7 @@ body {
   padding: 0;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(to top, #000, #191927);
+  background: linear-gradient(to top right, #000, #1b1b35);
   overflow: hidden;
   color:#dddddd
 }
@@ -247,12 +247,10 @@ body {
 }
 
 .content div {
-  background-color: rgba(65, 65, 65, 0.1);
+  background-color: rgba(20, 40, 40, 0.1);
   border-radius: 10px;
   width: calc(100%-20px);
-  height: calc(100vh-70px);
-  display: inline-block; 
-  flex-grow: 1;
+  height: calc(100vh-80px);
 }
 
 .rename-input {
@@ -316,9 +314,16 @@ body {
 }
 
 .editor{
-  display: block;
-  position: relative;
-  background-color: #000;
+  display: inline-block;
+  vertical-align: top; 
   width: 50%;
-
+  opacity: 0.9;
 }
+
+.assignment{
+  display: block;
+  height: 95vh;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+

@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 import MonacoEditor from './monacoed';
+import MarkdownReader from './mdreader';
+import ReactMarkdown from "react-markdown"
 
 function App() {
   const [activeTab, setActiveTab] = useState({ id: 1, name: 'New Tab' });
@@ -25,11 +27,6 @@ function App() {
     // Implementation to save messages in JSON format
     // ... (e.g., fetch POST request to your server) ...
   };
-
-  
-  
-  //endofnewstuff
-
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -117,8 +114,8 @@ function App() {
       <div className="content">
         {tabs.map((tab) => (
           <div key={tab.id} style={{ display: activeTab.id === tab.id ? 'block' : 'none' }}>
-            <div className='editor'>hello</div>
-            <div className='editor'> <MonacoEditor id='editor'/> </div>    
+            <div className='editor'><div className='assignment'><MarkdownReader file="README.md"></MarkdownReader></div></div>
+            <div className='editor'> <MonacoEditor/> </div>    
           </div>
         ))}
       </div>
