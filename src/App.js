@@ -114,7 +114,7 @@ function App() {
       <div className="content">
         {tabs.map((tab) => (
           <div key={tab.id} style={{ display: activeTab.id === tab.id ? 'block' : 'none' }}>
-            <div className='editor'><div className='assignment'><MarkdownReader file="README.md"></MarkdownReader></div></div>
+            <div className='editor'><div className='assignment'><MarkdownReader problem= "TwoSum"></MarkdownReader></div></div>
             <div className='editor'> <MonacoEditor/> </div>    
           </div>
         ))}
