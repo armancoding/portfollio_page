@@ -1,31 +1,5 @@
 import React, { useRef, useEffect } from 'react';
 import MonacoEditor from '@monaco-editor/react';
-//import * as monaco from 'monaco-editor';
-
-// const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
-// const path = require('path');
-
-// module.exports = {
-// 	entry: './index.js',
-// 	output: {
-// 		path: path.resolve(__dirname, 'dist'),
-// 		filename: 'app.js'
-// 	},
-// 	module: {
-// 		rules: [
-// 			{
-// 				test: /\.css$/,
-// 				use: ['style-loader', 'css-loader']
-// 			},
-// 			{
-// 				test: /\.ttf$/,
-// 				use: ['file-loader']
-// 			}
-// 		]
-// 	},
-// 	plugins: [new MonacoWebpackPlugin()]
-// };
-
 
 
 
@@ -39,7 +13,7 @@ const Editor = () => {
     hideCursorInOverviewRuler: true,
     matchBrackets: 'always',
     minimap: {
-      enabled: true,
+      enabled: false,
     },
     scrollbar: {
       horizontalSliderSize: 4,
@@ -53,6 +27,7 @@ const Editor = () => {
   }; 
     return (
       <MonacoEditor
+        resize="horizontal"
         language="javascript"
         value="console.log('hello world')"
         height='95vh'

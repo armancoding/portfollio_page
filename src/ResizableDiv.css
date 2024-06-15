@@ -1,0 +1,21 @@
+.resizable {
+    position: fixed;
+    bottom: 20px; /*TEMP*/
+    background-color: #0000;
+    overflow: auto;
+    min-width: 100px;
+    min-height: 300px;
+    max-width: 50%;
+    z-index: 1;
+  }
+  
+  .resize-handle {
+    border-radius: 5px;
+    width: 10px; /* Width of the resize handle */
+    height: 100%; /* Full height of the div */
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: ew-resize; /* Cursor for horizontal resizing */
+    background-color: rgba(0, 0, 0, 0.2); /* Slightly visible handle */
+  }

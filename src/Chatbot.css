@@ -1,0 +1,98 @@
+.chatbox {
+    /* resize: horizontal; */
+    position: fixed;
+    bottom: 20px;
+    left: 10px;
+    width: 45%;
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 49%;
+    background-color: rgba(128, 128, 128, 0.2);
+    border-radius: 10px;
+    z-index: 2;
+  }
+  
+  .chat-header {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 15px;
+    background-color: rgba(128, 128, 128, 0.0);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .close-chat {
+    cursor: pointer;
+  }
+  
+  .chat-messages {
+    padding: 10px;
+    height: 25vh; /* Adjust as needed */
+    overflow-y: auto;
+  }
+  
+  .chat-input {
+    display: flex;
+    padding: 10px;
+  }
+  
+  .chat-input input {
+    flex-grow: 1;
+    margin-right: 10px;
+    background-color: #0000;
+    border:1px solid rgba(100, 128, 150, 1);
+    color:#dddddd;
+    border-radius: 4px;
+  }
+  
+  .chat-input input:focus {
+  
+    border:2px solid rgba(100, 128, 150, 1);
+    outline: none;
+  }
+  
+  .chat-input button {
+    background-color: rgba(100, 128, 150, 0.3);
+    color:#dddddd;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    justify-content: flex-end;
+    border-width: 0px;
+  }
+  
+
+  .resizable {
+    position: fixed;
+    bottom: 20px; /*TEMP*/
+    background-color: #0000;
+    overflow: auto;
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 49%;
+    z-index: 1;
+  }
+  
+  .resize-handle {
+    width: 8px; /* Width of the resize handle */
+    top:25px;
+    height: 90%; /* Full height of the div */
+    position: absolute;
+    right: 0;
+    cursor: ew-resize; /* Cursor for horizontal resizing */
+    background-color: rgba(100, 128, 150, .25); /* Slightly visible handle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .vertical-line {
+    margin: 0;
+    width: 2px; /* Adjust thickness of the line */
+    height: 80%; /* Adjust height of the line */
+    background-color: rgba(100, 128, 150, 1); /* Line color */
+    border: none; /* Remove default hr border */
+}

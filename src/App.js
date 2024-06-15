@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 import MonacoEditor from './monacoed';
 import MarkdownReader from './mdreader';
-import ReactMarkdown from "react-markdown"
+import Chatbox from './Chatbox';
+// import ResizableDiv from './ResizableDiv';
 
 function App() {
   const [activeTab, setActiveTab] = useState({ id: 1, name: 'New Tab' });
@@ -134,56 +135,57 @@ function App() {
   );
 }
 
-function Chatbox({ chatId, onClose }) {
-  const [messages, setMessages] = useState([]);
-  const [messageInput, setMessageInput] = useState('');
-  const messagesEndRef = useRef(null);
+// function Chatbox({ chatId, onClose }) {
+//   const [messages, setMessages] = useState([]);
+//   const [messageInput, setMessageInput] = useState('');
+//   const messagesEndRef = useRef(null);
 
-  const handleSendMessage = () => {
-    if (messageInput.trim() !== '') {
-      // Send message to backend (using fetch, Axios, etc.)
-      fetch('/api/messages', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chatId, message: messageInput }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          setMessages([...messages, data]);
-          setMessageInput('');
-        });
-    }
-  };
+//   const handleSendMessage = () => {
+//     if (messageInput.trim() !== '') {
+//       // Send message to backend (using fetch, Axios, etc.)
+//       fetch('/api/messages', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ chatId, message: messageInput }),
+//       })
+//         .then((res) => res.json())
+//         .then((data) => {
+//           setMessages([...messages, data]);
+//           setMessageInput('');
+//         });
+//     }
+//   };
 
-  useEffect(() => {
-    // Scroll to the bottom of the chat on new messages
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+//   useEffect(() => {
+//     // Scroll to the bottom of the chat on new messages
+//     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+//   }, [messages]);
 
-  return (
-    <div className="chatbox">
-      <div className="chat-header">
-        Chat {chatId}
-        <span className="close-chat" onClick={onClose}>x</span>
-      </div>
-      <div className="chat-messages">
-        {messages.map((msg, index) => (
-          <div key={index}>{msg.message}</div> // Display messages
-        ))}
-        <div ref={messagesEndRef} /> 
-      </div>
-      <div className="chat-input">
-        <input
-          type="text"
-          value={messageInput}
-          onChange={(e) => setMessageInput(e.target.value)}
-          onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-        />
-        <button onClick={handleSendMessage}>Send</button>
-      </div>
-    </div>
-  );
-}
+//   return (
+//     <div className="chatbox resizable">
+//           <div class="resize-handle"></div>
+//       <div className="chat-header">
+//         Chat with Fantastica
+//         <span className="close-chat" onClick={onClose}>x</span>
+//       </div>
+//       <div className="chat-messages ">
+//         {messages.map((msg, index) => (
+//           <div key={index}>{msg.message}</div> // Display messages
+//         ))}
+//         <div ref={messagesEndRef} /> 
+//       </div>
+//       <div className="chat-input">
+//         <input
+//           type="text"
+//           value={messageInput}
+//           onChange={(e) => setMessageInput(e.target.value)}
+//           onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+//         />
+//         <button onClick={handleSendMessage}>Send</button>
+//       </div>
+//     </div>
+//   );
+// }
 
 
 export default App;
