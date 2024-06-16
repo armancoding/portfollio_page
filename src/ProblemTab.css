@@ -38,10 +38,14 @@
 }
 
 
-.vertical-line {
+#vertical-line {
+    display: flex;
     margin: 0;
     width: 2px; 
     height: 80%; 
     background-color: rgba(100, 128, 150); 
     border: none; 
+    position: relative;
+    top: 10%; 
+    left: 40%;
 }
