@@ -1,0 +1,47 @@
+.right{
+    display: inline-block;
+    vertical-align: top; 
+    right: 0;
+    width: calc(60% - 10px);
+    min-width: calc(30% - 10px);
+    max-width: calc(70% - 10px);
+    opacity: 0.9;
+    z-index: 3;
+}
+
+.left{
+    display: inline-block;
+    vertical-align: top; 
+    width: 40%;
+    min-width: 30%;
+    max-width: 70%;
+    opacity: 0.9;
+}
+  
+.assignment{
+    display: fixed;
+    height: 95vh;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+  
+#resize-handle {
+    width: 10px;
+    height: 94vh; 
+    position: inline-block;
+    cursor: ew-resize; 
+    background-color: rgba(100, 128, 150, .25); 
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+
+.vertical-line {
+    margin: 0;
+    width: 2px; 
+    height: 80%; 
+    background-color: rgba(100, 128, 150); 
+    border: none; 
+}

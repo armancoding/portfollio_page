@@ -3,6 +3,7 @@ import './App.css';
 import MonacoEditor from './monacoed';
 import MarkdownReader from './mdreader';
 import Chatbox from './Chatbox';
+import ProblemTab from './ProblemTab';
 // import ResizableDiv from './ResizableDiv';
 
 function App() {
@@ -78,7 +79,7 @@ function App() {
   return (
     <div className="App">
       <div className="navbar">
-        <input type="search" value={searchValue} onChange={handleSearchChange} />
+        <input type="search" value={searchValue} placeholder='search' onChange={handleSearchChange} />
         <div className="tabs">
           {tabs.map((tab) => (
             <div key={tab.id} className={`tab ${activeTab.id === tab.id ? 'active' : ''}`} onClick={() => handleTabClick(tab)}>
@@ -115,8 +116,7 @@ function App() {
       <div className="content">
         {tabs.map((tab) => (
           <div key={tab.id} style={{ display: activeTab.id === tab.id ? 'block' : 'none' }}>
-            <div className='editor'><div className='assignment'><MarkdownReader problem= "TwoSum"></MarkdownReader></div></div>
-            <div className='editor'> <MonacoEditor/> </div>    
+            <ProblemTab problem={'TwoSum'}></ProblemTab>
           </div>
         ))}
       </div>
@@ -134,58 +134,5 @@ function App() {
     </div>
   );
 }
-
-// function Chatbox({ chatId, onClose }) {
-//   const [messages, setMessages] = useState([]);
-//   const [messageInput, setMessageInput] = useState('');
-//   const messagesEndRef = useRef(null);
-
-//   const handleSendMessage = () => {
-//     if (messageInput.trim() !== '') {
-//       // Send message to backend (using fetch, Axios, etc.)
-//       fetch('/api/messages', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({ chatId, message: messageInput }),
-//       })
-//         .then((res) => res.json())
-//         .then((data) => {
-//           setMessages([...messages, data]);
-//           setMessageInput('');
-//         });
-//     }
-//   };
-
-//   useEffect(() => {
-//     // Scroll to the bottom of the chat on new messages
-//     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-//   }, [messages]);
-
-//   return (
-//     <div className="chatbox resizable">
-//           <div class="resize-handle"></div>
-//       <div className="chat-header">
-//         Chat with Fantastica
-//         <span className="close-chat" onClick={onClose}>x</span>
-//       </div>
-//       <div className="chat-messages ">
-//         {messages.map((msg, index) => (
-//           <div key={index}>{msg.message}</div> // Display messages
-//         ))}
-//         <div ref={messagesEndRef} /> 
-//       </div>
-//       <div className="chat-input">
-//         <input
-//           type="text"
-//           value={messageInput}
-//           onChange={(e) => setMessageInput(e.target.value)}
-//           onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-//         />
-//         <button onClick={handleSendMessage}>Send</button>
-//       </div>
-//     </div>
-//   );
-// }
-
 
 export default App;

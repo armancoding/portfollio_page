@@ -3,7 +3,7 @@ import MonacoEditor from '@monaco-editor/react';
 
 
 
-const Editor = () => {
+function Editor({starterCode}) {
   const options = {
     autoIndent: 'full',
     contextmenu: true,
@@ -29,7 +29,7 @@ const Editor = () => {
       <MonacoEditor
         resize="horizontal"
         language="javascript"
-        value="console.log('hello world')"
+        value={starterCode}
         height='95vh'
         width='100%'
         align-self='flex-start'

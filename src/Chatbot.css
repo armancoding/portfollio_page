@@ -1,5 +1,4 @@
 .chatbox {
-    /* resize: horizontal; */
     position: fixed;
     bottom: 20px;
     left: 10px;
@@ -63,19 +62,7 @@
     justify-content: flex-end;
     border-width: 0px;
   }
-  
 
-  .resizable {
-    position: fixed;
-    bottom: 20px; /*TEMP*/
-    background-color: #0000;
-    overflow: auto;
-    min-width: 300px;
-    min-height: 300px;
-    max-width: 49%;
-    z-index: 1;
-  }
-  
   .resize-handle {
     width: 8px; /* Width of the resize handle */
     top:25px;

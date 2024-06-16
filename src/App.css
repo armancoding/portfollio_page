@@ -179,7 +179,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(128, 128, 128, 0.25);
+  background-color: rgba(100, 128, 150, .25);;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -191,11 +191,8 @@ body {
   height: 20px;
   padding: 10px;
   font-size: 16px;
-  border: none;
   border-radius: 10px;
   margin-right: 10px;
-  background-color: #999;
-
 }
 
 .tabs {
@@ -207,8 +204,8 @@ body {
 }
 
 .tab {
-  background-color: rgba(128, 128, 128, 0.5);
-  height: 20px;
+  background-color: rgba(100, 128, 150, .45);
+  height: 12px;
   padding: 10px;
   border-radius: 10px;
   margin-right: 10px;
@@ -216,10 +213,15 @@ body {
   font-size: 16px;
   display: flex;
   align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+  background-color: rgba(100, 128, 150, .8);
 }
 
 .tab.active {
-  background-color: rgba(128, 128, 128, 0.8);
+  background-color: rgba(100, 128, 150, .8);
 }
 
 .close-tab {
@@ -229,18 +231,27 @@ body {
 }
 
 .add-tab {
-  background-color: rgba(128, 128, 128, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgba(100, 128, 150, .45);
+  height: 12px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 50%;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.add-tab:hover {
+  background-color: rgba(100, 128, 150, .8);
 }
 
 .content {
   position: absolute;
   top: 60px;
   left: 0;
-  width: 100%;
+  right: 0;
   height: calc(100vh - 10px);
   padding: 10px;
   overflow-y: auto;
@@ -262,7 +273,7 @@ body {
 
 .help-button {
   /* Style the help button to match the existing UI */
-  background-color: rgba(128, 128, 128, 0.5);
+  background-color: rgba(100, 128, 150, .45);
   padding: 10px;
   margin-right: 20px;
   border-radius: 10px;
@@ -271,16 +282,13 @@ body {
   justify-content: flex-end;
 }
 
-.editor{
-  display: inline-block;
-  vertical-align: top; 
-  width: 50%;
-  opacity: 0.9;
+input {
+  background-color: #0000;
+  border:1px solid rgba(100, 128, 150);
+  color:#dddddd;
 }
-
-.assignment{
-  display: block;
-  height: 95vh;
-  border-radius: 10px;
-  margin-left: 10px;
+input:focus {
+  
+  border:2px solid rgba(100, 128, 150);
+  outline: none;
 }
