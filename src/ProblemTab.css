@@ -2,9 +2,9 @@
     display: inline-block;
     vertical-align: top; 
     right: 0;
-    width: calc(60% - 10px);
-    min-width: calc(30% - 10px);
-    max-width: calc(70% - 10px);
+    width: calc(60% - 23px);
+    min-width: calc(30% - 23px);
+    max-width: calc(70% - 23px);
     opacity: 0.9;
     z-index: 3;
 }
@@ -26,7 +26,7 @@
 }
   
 #resize-handle {
-    width: 10px;
+    width: 8px;
     height: 94vh; 
     position: inline-block;
     cursor: ew-resize; 

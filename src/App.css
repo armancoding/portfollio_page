@@ -272,14 +272,21 @@ body {
 
 
 .help-button {
-  /* Style the help button to match the existing UI */
   background-color: rgba(100, 128, 150, .45);
+  height: 12px;
   padding: 10px;
   margin-right: 20px;
   border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
   justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.help-button:hover {
+  background-color: rgba(100, 128, 150, .8);
 }
 
 input {

@@ -27,7 +27,7 @@ function ProblemTab({problem}) {
         const parent = resizableL.parentElement;
         const totalWidth = parent.getBoundingClientRect().width;
 
-        const newWidthR = totalWidth - newWidthL - document.getElementById('resize-handle').getBoundingClientRect().width;
+        const newWidthR = totalWidth - newWidthL - document.getElementById('resize-handle').getBoundingClientRect().width - 15;
         console.log(`client x = ${e.clientX}\nnewWidthR = ${newWidthR}`)
         
         resizableL.style.width = `${newWidthL}px`;
