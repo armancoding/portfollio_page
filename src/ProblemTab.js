@@ -1,12 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import MonacoEditor from './monacoed';
 import MarkdownReader from './mdreader';
-// import problems from './tasks.json'
 import './ProblemTab.css'
+import Chatbox from './Chatbox';
 var config = require('./tasks.json');
 
 
 function ProblemTab({problem}) {
+    const [showChatboxes, setShowChatboxes] = useState({}); // Track which chatboxes are open
+    
     const resizableRefL = useRef(null);
     const resizableRefR = useRef(null);
 
@@ -40,17 +42,51 @@ function ProblemTab({problem}) {
     };
 
 
+    const handleHelpClick = () => {
+      const newChatId = Date.now();
+      setShowChatboxes({ ...showChatboxes, [newChatId]: true });
+    };
+  
+    const handleCloseChat = (chatId) => {
+      setShowChatboxes({ ...showChatboxes, [chatId]: false });
+    };
+  
+    // Backend Function (placeholder)
+    const saveMessageToBackend = (chatId, message) => {
+      // Implementation to save messages in JSON format
+      // ... (e.g., fetch POST request to your server) ...
+    };
+
+
     return (
         <>      
         <div className='left' ref={resizableRefL}>
             <div className='assignment'>
+            <div className='controlsL' id='cont'>
+                <div className="button" onClick={handleHelpClick}>FantasAI</div>
+                <div className='button'>Description</div>
+                <div className='button'>Submission History</div>
+                <div className='button'>Discussion</div>
+            </div>
+            {Object.keys(showChatboxes).map((chatId) =>
+                        showChatboxes[chatId] ? (
+                          <Chatbox parent='cont' key={chatId} chatId={chatId} onClose={() => handleCloseChat(chatId)} />
+                        ) : null
+                        )}
                 <MarkdownReader problem={config[problem]['description']}></MarkdownReader>
             </div>
         </div>
         <div id='resize-handle' onMouseDown={handleMouseDown}>
             <div id='vertical-line'></div>
         </div>
-        <div className='right' ref={resizableRefR}> <MonacoEditor starterCode={config[problem]['starter_code']}/> </div></> 
+        <div className='right' ref={resizableRefR}> 
+            <div className='controls'>
+                <div className='button'>Test</div>
+                <div className='button'>Submit</div>
+                <div className='button'>Run</div>
+            </div>
+            <MonacoEditor starterCode={config[problem]['starter_code']}/> 
+        </div></> 
     );
 }
 

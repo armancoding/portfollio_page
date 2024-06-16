@@ -1,10 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
-import MonacoEditor from './monacoed';
-import MarkdownReader from './mdreader';
-import Chatbox from './Chatbox';
 import ProblemTab from './ProblemTab';
-// import ResizableDiv from './ResizableDiv';
+import Planets from './Planets';
 
 function App() {
   const [activeTab, setActiveTab] = useState({ id: 1, name: 'New Tab' });
@@ -12,23 +9,6 @@ function App() {
   const [searchValue, setSearchValue] = useState('');
   const [renamingTab, setRenamingTab] = useState(null);
   const renameInputRef = useRef(null);
-  //newstuff
-  const [showChatboxes, setShowChatboxes] = useState({}); // Track which chatboxes are open
-
-  const handleHelpClick = () => {
-    const newChatId = Date.now();
-    setShowChatboxes({ ...showChatboxes, [newChatId]: true });
-  };
-
-  const handleCloseChat = (chatId) => {
-    setShowChatboxes({ ...showChatboxes, [chatId]: false });
-  };
-
-  // Backend Function (placeholder)
-  const saveMessageToBackend = (chatId, message) => {
-    // Implementation to save messages in JSON format
-    // ... (e.g., fetch POST request to your server) ...
-  };
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -103,15 +83,7 @@ function App() {
             +
           </div>
         </div>
-        <div className="help-button" onClick={handleHelpClick}>Help</div>
       </div>
-
-      {/* Chatboxes */}
-      {Object.keys(showChatboxes).map((chatId) =>
-      showChatboxes[chatId] ? (
-        <Chatbox key={chatId} chatId={chatId} onClose={() => handleCloseChat(chatId)} />
-      ) : null
-      )}
       
       <div className="content">
         {tabs.map((tab) => (
@@ -120,16 +92,7 @@ function App() {
           </div>
         ))}
       </div>
-      <div className="sun" />
-      <div className="planet mercury" />
-      <div className="planet venus" />
-      <div className="planet earth" />
-      <div className="planet mars" />
-      <div className="planet jupiter" />
-      <div className="planet saturn" />
-      <div className="planet uranus" />
-      <div className="planet neptune" />
-      
+      <Planets/>
 
     </div>
   );

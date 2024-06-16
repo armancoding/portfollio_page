@@ -30,7 +30,7 @@ function Editor({starterCode}) {
         resize="horizontal"
         language="javascript"
         value={starterCode}
-        height='95vh'
+        height='91vh'
         width='100%'
         align-self='flex-start'
         background-color='blue'
