@@ -88,7 +88,7 @@ function App() {
       <div className="content">
         {tabs.map((tab) => (
           <div key={tab.id} style={{ display: activeTab.id === tab.id ? 'block' : 'none' }}>
-            <ProblemTab problem={'TwoSum'}></ProblemTab>
+            <ProblemTab problem={'TestLaTexHTML'}></ProblemTab>
           </div>
         ))}
       </div>

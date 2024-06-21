@@ -1,7 +1,12 @@
 {
     "TwoSum" :{
-        "description": "# 1. Two Sum\nGiven an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.\n\n#### Example 1:\n```\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nExplanation: Because nums[0] + nums[1] == 9, we return[0, 1].\n```\n#### Example 2:\n```\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\n```\n#### Example 3:\n```\nInput: nums = [3,3], target = 6\nOutput: [0,1]\n```\n",
+        "description": "# 1. Two Sum\nGiven an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.\n\n#### Example 1:\n```\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nExplanation: Because nums[0] + nums[1] == 9, we return[0, 1].\n```\n#### Example 2:\n```\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\n```\n#### Example 3:\n```\nInput: nums = [3,3], target = 6\nOutput: [0,1]\n```\n```c++\nint main()\n{\n\tstd::cout << \"hello world\" <<std::emd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n}\n```\n# My Awesome Video\n",
         "starter_code": "console.log('Hello TwoSum')"
-    } 
+    },
+    "TestLaTexHTML" :{
+        "description": "#Video\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/dQw4w9WgXcQ\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\n#LaTeX $$\nKE = \frac{1}{2}mv^2\n$$\n",
+        "starter_code": "console.log('Hello TwoSum')"
+
+    }
 
 }

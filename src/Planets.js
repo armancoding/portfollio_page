@@ -15,7 +15,8 @@ const Planets = () => {
             <div className="saturn-ring" />
         </div>
         <div className="planet uranus" />
-        <div className="planet neptune" /></>
+        <div className="planet neptune" /> 
+        </>
     );
 }
 

@@ -80,11 +80,6 @@ function ProblemTab({problem}) {
             <div id='vertical-line'></div>
         </div>
         <div className='right' ref={resizableRefR}> 
-            <div className='controls'>
-                <div className='button'>Test</div>
-                <div className='button'>Submit</div>
-                <div className='button'>Run</div>
-            </div>
             <MonacoEditor starterCode={config[problem]['starter_code']}/> 
         </div></> 
     );

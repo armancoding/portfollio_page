@@ -21,12 +21,22 @@ body {
 }
 
 .navbar input[type="search"] {
-  width: 150px;
+  width: 200px;
   height: 20px;
   padding: 10px;
   font-size: 16px;
   border-radius: 10px;
   margin-right: 10px;
+  transition: width 0.3s ease;
+}
+.navbar input[type="search"]:focus {
+  width: 300px;
+  height: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-right: 10px;
+
 }
 
 .tabs {
@@ -130,6 +140,42 @@ input {
 }
 input:focus {
   
-  border:2px solid rgba(100, 128, 150);
+  border:2px solid rgb(105, 151, 185);
   outline: none;
+}
+
+
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0000; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(49, 50, 51,.5); 
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 128, 150); 
+}
+
+/* ::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+} */
+
+.scrollable-container {
+  height: 80vh; /* Adjust height as needed */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
 }

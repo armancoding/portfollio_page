@@ -90,3 +90,33 @@
     background-color: rgba(100, 128, 150, .8);
   }
   
+
+  select {
+    background-color: rgba(100, 128, 150, 0.45);
+    padding: 8px;
+    margin-right: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    border: none;
+    outline: none; 
+    color: white; 
+  }
+  
+  select::after {
+    content: '▼'; /* Unicode down arrow character */
+    position: absolute;
+    top: calc(50% - 0.5em);
+    right: 10px;
+    color: white;
+    pointer-events: none;
+  }
+  
+  select:hover {
+    background-color: rgba(100, 128, 150, 0.6);
+  }
+  
+  select:focus {
+    background-color: rgb(23, 44, 59);
+  }

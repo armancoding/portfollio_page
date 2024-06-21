@@ -1,9 +1,12 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import MonacoEditor from '@monaco-editor/react';
 
 
 
 function Editor({starterCode}) {
+
+
+
   const options = {
     autoIndent: 'full',
     contextmenu: true,
@@ -26,6 +29,17 @@ function Editor({starterCode}) {
     automaticLayout: true,
   }; 
     return (
+      <>
+      <div className='controls'>
+        <div className='button'>Test</div>
+        <div className='button'>Submit</div>
+        <select id="language" defaultValue={'cpp'}>
+          <option value="javascript">JavaScript</option>
+          <option value="python">Python</option>
+          <option value="java">Java</option>
+          <option value="cpp">C++</option>
+        </select>
+      </div>
       <MonacoEditor
         resize="horizontal"
         language="javascript"
@@ -37,6 +51,7 @@ function Editor({starterCode}) {
         theme="vs-dark"
         options={options}
       />
+      </>
     );
 };
 
